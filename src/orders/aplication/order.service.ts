@@ -7,8 +7,8 @@ export class OrderService {
   constructor(orderRepository: IOrderRepository) {
     this.orderRepository = orderRepository;
   }
-  public addOrder(productId: number, total: number): Order {
+  public async addOrder(productId: number, total: number): Promise<Order> {
     const order: Order = new Order(productId, total);
-    return this.orderRepository.addOrder(order);
+    return await this.orderRepository.addOrder(order);
   }
 }
