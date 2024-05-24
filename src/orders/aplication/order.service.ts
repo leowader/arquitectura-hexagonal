@@ -4,11 +4,17 @@ import { Order } from "../domain/order";
 export class OrderService {
   private orderRepository: IOrderRepository; //APP=>DOMAIN
   //   inyectando dependencia
+  
   constructor(orderRepository: IOrderRepository) {
     this.orderRepository = orderRepository;
   }
+  
   public async addOrder(productId: number, total: number): Promise<Order> {
     const order: Order = new Order(productId, total);
     return await this.orderRepository.addOrder(order);
+  }
+  
+  public async getOrders(): Promise<Order[]> {
+    return await this.orderRepository.getOrders();
   }
 }
