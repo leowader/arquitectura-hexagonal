@@ -8,4 +8,4 @@ app.get("/", (_req, res) => {
   res.send({ data: "ok" });
 });
 
-app.use("/api/v1",orderRouter)
+app.use("/v1",orderRouter)
