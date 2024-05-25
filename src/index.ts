@@ -9,6 +9,7 @@ async function main() {
     app.listen(PORT, () => {
       console.log(`Server runing on http://localhost:${process.env.PORT}`);
     });
+    console.log("Conection has been established successfully in Postgres");
   } catch (error) {
     if (error instanceof Error) {
       console.log("Error in connection in db Postgres", error.message);
