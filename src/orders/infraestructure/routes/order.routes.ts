@@ -3,7 +3,7 @@ import { orderController } from "../dependecies";
 
 const orderRouter = express();
 
-orderRouter.post("/createOrder", orderController.addOrder.bind(orderController));
+orderRouter.post("/order", orderController.addOrder.bind(orderController));
 
 orderRouter.get("/orders", orderController.getOrders.bind(orderController));
 
